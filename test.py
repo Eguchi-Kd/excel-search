@@ -1,2 +1,3 @@
 import os
-return render_template(index.html,TEST_ID=os.environ.get.("TEST_ID"))
+test_id = os.environ.get.("TEST_ID")
+return render_template(index.html,TEST_ID=test_id)
