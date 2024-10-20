@@ -35,8 +35,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: vite
-        run: npm create vite@latest
+      # - name: vite
+      #   run: npm create vite@latest
       - name: Install dependencies
         run: |
           npm install
@@ -48,8 +48,7 @@ jobs:
       - name: Build Vite project
         run: |
           #yarn build
-          #npm run build
-          vite build
+          npm run build
       # - name: Install Dependencies (prod)
       #   run: yarn install --frozen-lockfile --production
       # - name: Set up dotenv
