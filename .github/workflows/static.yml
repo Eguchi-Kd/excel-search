@@ -39,8 +39,8 @@ jobs:
         run: yarn install --frozen-lockfile --production
       - name: Set up dotenv
         run: yarn add -D dotenv
-      - name: eslint check
-        run: eslint -v
+      - name: eslint install
+        run: npm install --save eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react
       - name: Run Tests (JEST)
         run: yarn node ./test.js --ci --silent --testPathIgnorePatterns=experimental
         env:
