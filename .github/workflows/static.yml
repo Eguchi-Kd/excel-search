@@ -41,6 +41,8 @@ jobs:
         run: yarn add -D dotenv
       - name: eslint install
         run: npm install --save eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react
+      - name: eslint again
+        run: npm lint
       - name: Run Tests (JEST)
         run: yarn node ./test.js --ci --silent --testPathIgnorePatterns=experimental
         env:
