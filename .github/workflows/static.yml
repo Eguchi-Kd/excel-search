@@ -38,7 +38,7 @@ jobs:
       - name: Install Dependencies (prod)
         run: yarn install --frozen-lockfile --production
       - name: Run Tests (JEST)
-        run: yarn jest --ci --silent --testPathIgnorePatterns=experimental
+        run: yarn node ./test.js --ci --silent --testPathIgnorePatterns=experimental
         env:
           CI: true
           API_KEY: ${{ secrets.TEST_ID }}
