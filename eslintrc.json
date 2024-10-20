@@ -11,6 +11,11 @@
     "@next/next/no-img-element": "off",
     "@typescript-eslint/no-explicit-any": "off"
   },
+  "env": {
+     "browser": true,
+     "es2021": true,
+     "node": true
+  },
   "ignorePatterns": [
     "package.json",
     "package-lock.json"
