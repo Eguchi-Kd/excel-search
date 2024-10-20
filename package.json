@@ -4,4 +4,7 @@
   "main": "test.js",
   "author": "ore",
   "license": "MIT"
+  "scripts": {
+    "lint": "eslint . --ext .js"
+  }
 }
