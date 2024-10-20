@@ -1,1 +1,1 @@
-console.log(TEST_ID);
+console.log(process.env.TEST_ID);
