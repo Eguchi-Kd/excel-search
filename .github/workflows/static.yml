@@ -35,8 +35,11 @@ jobs:
         uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
-        env: 
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+      - name: Run test.py
+        env:
+          TEST_ID: ${{ secrets.TEST_ID }}
+        run:
+          python python/test.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
