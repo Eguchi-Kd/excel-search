@@ -35,8 +35,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: vite
-        run: npm create vite@latest
+      # - name: vite
+      #   run: npm create vite@latest
       - name: Install dependencies
         run: |
           npm install
@@ -45,13 +45,21 @@ jobs:
         run: |
           touch .env
           echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > .env
-      - name: Verify .env file location and contents
+      # - name: Verify .env file location and contents
+      #   run: |
+      #     echo "Current working directory:"
+      #     pwd
+      #     echo "Contents of .env file:"
+      #     ls -la .env
+      #     cat .env
+      - name: Check .env file existence
         run: |
-          echo "Current working directory:"
-          pwd
-          echo "Contents of .env file:"
-          ls -la .env
-          cat .env
+          if [ -f .env ]; then
+            echo ".env file exists."
+          else
+            echo ".env file does not exist."
+            exit 1
+          fi
       - name: Build Vite project
         run: |
           #yarn build
