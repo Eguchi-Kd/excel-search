@@ -50,8 +50,8 @@ jobs:
           echo "Current working directory:"
           pwd
           echo "Contents of .env file:"
-          ls -la .env
-          cat .env
+          ls -la package.json
+          cat package.json
       - name: Build Vite project
         run: |
           npm run build
