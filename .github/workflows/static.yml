@@ -40,12 +40,12 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-      - name: Create dot env file
-        shell: bash
-        run: |
-          touch .env
-          echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
-          echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
+      # - name: Create dot env file
+      #   shell: bash
+      #   run: |
+      #     touch .env
+      #     echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
+      #     echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
       # - name: Verify .env file location and contents
       #   run: |
       #     echo "Current working directory:"
