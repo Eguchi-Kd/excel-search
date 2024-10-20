@@ -72,7 +72,7 @@ jobs:
       #   run: process.env
       - name: Build with environment secrets
         run: |
-          echo "window.VITE_TEST='${{ secrets.VITE_TEST }}';" > ./test.js
+          echo "import.meta.env.VITE_TEST='${{ secrets.VITE_TEST }}';" > ./test.js
       - name: Run test.py
         env:
           VITE_TEST_ID: ${{ secrets.VITE_TEST }}
