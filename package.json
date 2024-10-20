@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "test.js",
   "author": "ore",
-  "license": "MIT"
+  "license": "MIT",
   "scripts": {
     "lint": "eslint . --ext .js"
   }
