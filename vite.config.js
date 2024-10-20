@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  define: {
-  }
+  envDir:'/home/runner/work/excel-search/excel-search'
 });
