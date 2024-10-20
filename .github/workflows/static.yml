@@ -35,16 +35,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Set up dotenv
-        run: yarn add -D dotenv
+      - name: Run Tests (JEST)
+        run: yarn test --ci --silent --testPathIgnorePatterns=experimental
+        env:
+          API_KEY: ${{ secrets.TEST_ID }}
+      # - name: Set up dotenv
+      #   run: yarn add -D dotenv
       # - name: Build with environment secrets
       #   run: |
       #     echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./test.js
-      - name: Run test.py
-        env:
-          TEST_ID: ${{ secrets.TEST_ID }}
-        run:
-          node ./test.js
+      # - name: Run test.py
+      #   env:
+      #     TEST_ID: ${{ secrets.TEST_ID }}
+      #   run:
+      #     node ./test.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
