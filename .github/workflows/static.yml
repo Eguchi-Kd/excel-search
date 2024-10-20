@@ -45,7 +45,7 @@ jobs:
         run: |
           touch .env
           echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
-          echo "VITE_TEST2=${{ variables.VITE_TEST2 }}" > .env
+          echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
       # - name: Verify .env file location and contents
       #   run: |
       #     echo "Current working directory:"
