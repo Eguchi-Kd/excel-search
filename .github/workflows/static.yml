@@ -35,8 +35,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      # - name: vite
-      #   run: npm create vite@latest
+      - name: vite
+        run: npm create vite@latest
       - name: Install dependencies
         run: |
           npm install
@@ -44,7 +44,7 @@ jobs:
         shell: bash
         run: |
           touch .env
-          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" >> .env
+          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > .env
       - name: Verify .env file location and contents
         run: |
           echo "Current working directory:"
