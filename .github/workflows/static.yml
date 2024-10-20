@@ -35,6 +35,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Set up Vite
+        run: npm i vite-plugin-env-compatible
       # - name: Build with environment secrets
       #   run: |
       #     echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./test.js
