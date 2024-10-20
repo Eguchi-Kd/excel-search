@@ -31,16 +31,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      #     cache: npm
-      # - name: Install dependencies
-      #   run: npm install
-      - name: Build with environment secrets
+      - name: Fetch data from API
         run: |
-          echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./env.js
+          curl -H "Authorization: Bearer ${{ secrets.API_KEY }}" https://api.example.com/data > data.json
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: "20"
+      #     cache: npm
+      # - name: Build with environment secrets
+      #   run: |
+      #     echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./env.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       # - name: Run test.py
@@ -56,3 +57,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{ secrets.TEST_ID }}
