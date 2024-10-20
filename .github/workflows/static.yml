@@ -44,7 +44,7 @@ jobs:
         shell: bash
         run: |
           touch .env
-          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > .env
+          echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
       # - name: Verify .env file location and contents
       #   run: |
       #     echo "Current working directory:"
