@@ -41,7 +41,7 @@ jobs:
         run: yarn node ./test.js --ci --silent --testPathIgnorePatterns=experimental
         env:
           CI: true
-          API_KEY: ${{ secrets.TEST_ID }}
+          TEST_ID: ${{ secrets.TEST_ID }}
       # - name: Set up dotenv
       #   run: yarn add -D dotenv
       # - name: Build with environment secrets
