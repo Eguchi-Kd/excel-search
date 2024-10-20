@@ -34,18 +34,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: npm
+          node-version: '20'
       - name: Build with environment secrets
         run: |
-          echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./env.js
+          echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./test.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      # - name: Run test.py
-      #   env:
-      #     TEST_ID: ${{ secrets.TEST_ID }}
-      #   run:
-      #     python ./test.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
