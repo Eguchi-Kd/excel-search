@@ -1,21 +1,18 @@
 {
-  "parser": "@typescript-eslint/parser", 
   "extends": [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals"
   ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true // Allows for the parsing of JSX
-    }
-  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "json"],
   "rules": {
-    "react/prop-types": "off",
-    "@typescript-eslint/no-empty-interface": 0
+    "no-console": "error",
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  "ignorePatterns": [
+    "package.json",
+    "package-lock.json"
+  ]
 }
