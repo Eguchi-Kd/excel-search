@@ -35,7 +35,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: dotenv
+      - name: Set up dotenv
         run: yarn add -D dotenv
       # - name: Build with environment secrets
       #   run: |
