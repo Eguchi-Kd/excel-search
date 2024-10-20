@@ -45,9 +45,12 @@ jobs:
         run: |
           touch .env
           echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" >> .env
-      - name: Verify .env file
+      - name: Verify .env file location and contents
         run: |
+          echo "Current working directory:"
+          pwd
           echo "Contents of .env file:"
+          ls -la .env
           cat .env
       - name: Build Vite project
         run: |
