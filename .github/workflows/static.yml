@@ -37,15 +37,15 @@ jobs:
           node-version: '20'
       - name: Install Dependencies (prod)
         run: yarn install --frozen-lockfile --production
+      - name: Set up dotenv
+        run: yarn add -D dotenv
       - name: Run Tests (JEST)
         run: yarn node ./test.js --ci --silent --testPathIgnorePatterns=experimental
         env:
           CI: true
           TEST_ID: ${{ secrets.TEST_ID }}
-      - name: testes
-        run: process.env
-      # - name: Set up dotenv
-      #   run: yarn add -D dotenv
+      # - name: testes
+      #   run: process.env
       # - name: Build with environment secrets
       #   run: |
       #     echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./test.js
