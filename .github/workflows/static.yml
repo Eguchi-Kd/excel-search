@@ -43,8 +43,8 @@ jobs:
       - name: Create dot env file
         shell: bash
         run: |
-          touch .evv
-          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" >> .evv
+          touch .env
+          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" >> .env
       - name: Build Vite project
         run: |
           yarn build
