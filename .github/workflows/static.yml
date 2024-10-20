@@ -52,18 +52,10 @@ jobs:
       #     echo "Contents of .env file:"
       #     ls -la .env
       #     cat .env
-      - name: Check .env file existence
-        run: |
-          if [ -f .env ]; then
-            echo ".env file exists."
-          else
-            echo ".env file does not exist."
-            exit 1
-          fi
       - name: Build Vite project
         run: |
           #yarn build
-          npm run build
+          npm run vite build
       # - name: Install Dependencies (prod)
       #   run: yarn install --frozen-lockfile --production
       # - name: Set up dotenv
