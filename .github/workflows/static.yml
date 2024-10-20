@@ -40,9 +40,11 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-      - name: Set up environment variables
+      - name: Create dot env file
+      - shell: bash
         run: |
-          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > .env
+          touch .env
+          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" >> .env
       - name: Build Vite project
         run: |
           npm run build
