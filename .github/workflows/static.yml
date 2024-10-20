@@ -51,12 +51,15 @@ jobs:
         run: |
           #yarn build
           npm run build
-      - name: Create dot env file
-        shell: bash
-        run: |
-          touch .env
-          echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
-          echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
+      # - name: Create dot env file
+      #   shell: bash
+      #   run: |
+      #     touch .env
+      #     echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
+      #     echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
+      - name: Run test env
+        env:
+          VITE_TEST: ${{ secrets.VITE_TEST }}
       # - name: Install Dependencies (prod)
       #   run: yarn install --frozen-lockfile --production
       # - name: Set up dotenv
@@ -73,11 +76,11 @@ jobs:
       # - name: Build with environment secrets
       #   run: |
       #     echo "window.VITE_TEST='${{ secrets.VITE_TEST }}';" > ./test.js
-      - name: Run test.py
-        env:
-          VITE_TEST: ${{ secrets.VITE_TEST }}
-        run:
-          node ./test.js
+      # - name: Run test.py
+      #   env:
+      #     VITE_TEST: ${{ secrets.VITE_TEST }}
+      #   run:
+      #     node ./test.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
