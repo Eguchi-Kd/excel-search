@@ -64,7 +64,7 @@ jobs:
       #     echo "window.TEST_ID='${{ secrets.TEST_ID }}';" > ./test.js
       - name: Run test.py
         env:
-          TEST_ID: ${{ secrets.TEST_ID }}
+          VITE_TEST_ID: ${{ secrets.VITE_TEST_ID }}
         run:
           node ./test.js
       - name: Setup Pages
