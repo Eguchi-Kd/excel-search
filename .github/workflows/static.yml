@@ -75,7 +75,7 @@ jobs:
       #     echo "window.VITE_TEST='${{ secrets.VITE_TEST }}';" > ./test.js
       - name: Run test.py
         env:
-          VITE_TEST_ID: ${{ secrets.VITE_TEST }}
+          VITE_TEST: ${{ secrets.VITE_TEST }}
         run:
           node ./test.js
       - name: Setup Pages
