@@ -1,1 +1,1 @@
-console.log(process.env.TEST_ID);
+console.log(VITE.env.TEST_ID);
