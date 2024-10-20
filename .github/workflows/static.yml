@@ -37,6 +37,15 @@ jobs:
           node-version: '20'
       - name: vite
         run: npm create vite@latest
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Set up environment variables
+        run: |
+          echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
+      - name: Build Vite project
+        run: |
+          npm run build
       # - name: Install Dependencies (prod)
       #   run: yarn install --frozen-lockfile --production
       # - name: Set up dotenv
