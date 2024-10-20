@@ -37,7 +37,7 @@ jobs:
         env:
           TEST_ID: ${{ secrets.TEST_ID }}
         run:
-          python python/test.py
+          python ./test.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
