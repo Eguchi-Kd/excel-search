@@ -42,7 +42,7 @@ jobs:
           npm install
       - name: Set up environment variables
         run: |
-          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" >> .env
+          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > .env
       - name: Build Vite project
         run: |
           npm run build
