@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 export default defineConfig({
-  define{
+  define: {
     VITE_TEST: JSON.stringify('VITE_TEST:123'),
   },
   //envDir:'../'
