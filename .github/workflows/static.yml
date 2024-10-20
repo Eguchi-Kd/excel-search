@@ -40,12 +40,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-      # - name: Create dot env file
-      #   shell: bash
-      #   run: |
-      #     touch .env
-      #     echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
-      #     echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
       # - name: Verify .env file location and contents
       #   run: |
       #     echo "Current working directory:"
@@ -57,6 +51,12 @@ jobs:
         run: |
           #yarn build
           npm run build
+      - name: Create dot env file
+        shell: bash
+        run: |
+          touch .env
+          echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
+          echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
       # - name: Install Dependencies (prod)
       #   run: yarn install --frozen-lockfile --production
       # - name: Set up dotenv
