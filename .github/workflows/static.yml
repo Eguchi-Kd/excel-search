@@ -36,12 +36,11 @@ jobs:
         with:
           node-version: '20'
       - name: Create dot env file
-        shell: bash
         run: |
-          touch .env
-          echo "VITE_TEST=${{ secrets.VITE_TEST }}" > .env
-          echo "VITE_TEST2=${{ vars.VITE_TEST2 }}" > .env
-      - name: vite
+          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > /home/.env
+          echo "API_KEY=${{ secrets.API_KEY }}" >> /home/.env
+          echo ".env file created in /home/"
+      - name: vite install
         run: npm create vite@latest
       - name: Install dependencies
         run: |
