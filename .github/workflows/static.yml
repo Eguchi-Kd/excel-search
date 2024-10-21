@@ -37,8 +37,8 @@ jobs:
           node-version: '20'
       - name: Create dot env file
         run: |
-          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > /home/runner/work/excel-search/.env
-          echo "API_KEY=${{ secrets.API_KEY }}" >> /home/runner/work/excel-search/.env
+          echo "VITE_TEST_ID=${{ secrets.VITE_TEST_ID }}" > /home/runner/work/excel-search/excel-search/.env
+          echo "API_KEY=${{ secrets.API_KEY }}" >> /home/runner/work/excel-search/excel-search/.env
           echo ".env file created in /home/"
       - name: vite install
         run: npm create vite@latest
