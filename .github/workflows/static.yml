@@ -72,10 +72,10 @@ jobs:
       # - name: Build with environment secrets
       #   run: |
       #     echo "window.VITE_TEST='${{ secrets.VITE_TEST }}';" > ./test.js
-      - name: Verify .env file
-        run: |
-          echo ".env file:"
-          cat .env
+      # - name: Verify .env file
+      #   run: |
+      #     echo ".env file:"
+      #     cat .env
       - name: Run test
         # env:
         #   VITE_TEST: ${{ secrets.VITE_TEST }}
