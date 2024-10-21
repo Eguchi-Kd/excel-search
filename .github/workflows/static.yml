@@ -37,8 +37,8 @@ jobs:
           node-version: '20'
       - name: Create dot env file
         run: |
-          echo "VITE_TEST_KEY=${{ secrets.VITE_TEST_KEY }}" >/home/runner/.env
-          echo "VITE_TEST=${{ secrets.VITE_TEST }}" >>/home/.env
+          echo "VITE_TEST_KEY=${{ secrets.VITE_TEST_KEY }}" > .env
+          echo "VITE_TEST=${{ secrets.VITE_TEST }}" >> .env
           echo ".env file created in /home/"
       - name: vite install
         run: npm create vite@latest
